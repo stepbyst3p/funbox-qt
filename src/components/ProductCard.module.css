@@ -1,0 +1,181 @@
+@value colors: "./variables.css";
+@value blue, pink, yellow, lightGrey from colors;
+
+.productItem {
+  width: 320px;
+  margin: 0 40px 40px;
+}
+
+.productCard {
+  height: 480px;
+  position: relative;
+  padding: 25px 50px;
+  border: 4px solid blue;
+  border-radius: 14px;
+  background: #f2f2f2;
+  cursor: pointer;
+  transition: 0.3s;
+  clip-path: polygon(50px 0, 100% 0, 100% 100%, 0 100%, 0 50px);
+}
+
+.productCard:before {
+  content: '';
+  position: absolute;
+  left: -35px;
+  top: -30px;
+  width: 70px;
+  height: 60px;
+  border-bottom: solid 4px blue;
+  transform: rotate(-45deg);
+  transition: 0.3s;
+}
+
+.productImage {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.productTitle {
+  color: #000;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.productFlavour {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.productSubtitle {
+  color: #666;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.productDescription {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 13px;
+  text-shadow: 0 1px 0 #000000;
+}
+
+.productFeatures {
+  color: #666;
+  font-size: 14px;
+}
+
+.productFeatureValue {
+  font-weight: 600;
+}
+
+.productCtaButton {
+  border-bottom: 1px dashed blue;
+  background: none;
+  color:blue;  
+  tansition: .3s;
+}
+
+.productCtaButton:hover {
+  border-bottom: 1px dashed pink;
+  color:pink;   
+}
+
+.productDescription {
+  text-align: center;
+}
+
+.productDisabledCaption {
+  color: yellow;
+}
+
+.productWeight {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  z-index: 1;
+  bottom: 15px;
+  right: 15px;
+  background-color: blue;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  transition: background-color .15s linear;
+}
+
+.productWeightAmount {
+  font-size: 42px;
+  line-height: 1;
+  margin-top: 8px;
+}
+
+.productWeightUnit {
+  font-size: 21px;
+  line-height: 1;
+}
+
+.isSelected .productCard {
+  border-color: pink;
+}
+
+.isSelected .productWeight {
+  background-color: pink;
+}
+
+.isSelected .productCard:hover, .isSelected .productCard:hover:before {
+  border-color: blue;
+}
+
+.isSelected .productCard:hover .productWeight {
+  background-color: blue;
+}
+
+.isSelected .productCard:before {
+  border-color: pink;
+}
+
+.isDisabled .productCard {
+  cursor: not-allowed;
+  border-color: lightGrey;
+}
+
+.isDisabled .productWeight {
+  background-color: lightGrey;
+}
+
+.isDisabled .productImage {
+  opacity: .5;
+}
+
+.isDisabled .productTitle,
+.isDisabled .productSubtitle,
+.isDisabled .productFlavour,
+.isDisabled .productFeatures {
+  color: lightGrey;
+}
+
+.isDisabled .productCard:before {
+  border-color: lightGrey;
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+  .productItem {
+    width: 320px;
+    margin: 0 20px 40px;
+  }
+  .isSelected .productCard:hover, .isSelected .productCard:hover:before {
+    border-color: pink;
+  }
+
+  .isSelected .productCard:hover .productWeight {
+    background-color: pink;
+  }
+}
