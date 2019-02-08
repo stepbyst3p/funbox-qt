@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProductsList from "./ProductsList";
 import styles from "./App.module.css";
+
 class App extends Component {
   render() {
     return (
@@ -10,6 +11,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;

@@ -1,17 +1,24 @@
 import React, { Component } from "react";
 import styles from "./ProductCard.module.css";
-import ProductHeading from './ProductHeading'
-import ProductWeight from './ProductWeight'
-import ProductFeatures from './ProductFeatures'
-import ProductBottom from "./ProductBottom"
-import catImage from "../cat.png";
+import ProductHeader from "./ProductHeader";
+import ProductWeight from "./ProductWeight";
+import ProductFeatures from "./ProductFeatures";
+import ProductBottom from "./ProductBottom";
+import ProductImage from "../cat.png";
 
 class ProductCard extends Component {
   state = {
     status: ""
   };
-  handleClick = e => {
-    e.preventDefault();
+
+  componentWillMount() {
+    if (this.props.quantity === "0")
+      this.setState({
+        status: "disabled"
+      });
+  }
+
+  handleClick = () => {
     if (this.state.status === "selected") {
       this.setState({ status: "" });
     } else if (this.state.status === "") {
@@ -28,10 +35,12 @@ class ProductCard extends Component {
       description,
       weight
     } = this.props;
+
     const cardStateClasses = {
       selected: styles.isSelected,
       disabled: styles.isDisabled
     };
+
     return (
       <article
         className={
@@ -42,18 +51,22 @@ class ProductCard extends Component {
         onClick={this.handleClick}
       >
         <div className={styles.productCard}>
-          <ProductHeading title={title} subtitle={subtitle} flavour={flavour}/>
-          <ProductFeatures features={features}/>
+          <ProductHeader title={title} subtitle={subtitle} flavour={flavour} />
+          <ProductFeatures features={features} />
           <ProductWeight weight={weight} />
-          <img src={catImage} className={styles.productImage} />
-        </div>
-          <ProductBottom
-            status={this.state.status}
-            selectProduct={this.state.selectProduct}
-            flavour={flavour}
-            description={description}
-            className={styles.productBottom}
+          <img
+            src={ProductImage}
+            alt={subtitle}
+            className={styles.productImage}
           />
+        </div>
+        <ProductBottom
+          status={this.state.status}
+          selectProduct={this.state.selectProduct}
+          flavour={flavour}
+          description={description}
+          className={styles.productBottom}
+        />
       </article>
     );
   }

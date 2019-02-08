@@ -6,7 +6,11 @@
       "flavour": "с фуа-гра",
       "weight": "0,5",
       "description": "Печень утки разварная с артишоками.",
-      "features": [{"value": "10", "caption": "порций"}, {"value": "", "caption":"мышь в подарок"}]
+      "features": [
+        { "value": "10", "caption": "порций" },
+        { "value": "", "caption": "мышь в подарок" }
+      ],
+      "quantity": "4"
     },
     {
       "title": "нямушка",
@@ -14,7 +18,11 @@
       "flavour": "с рыбой",
       "weight": "2",
       "description": "Головы щучьи с чесноком да свежайшая сёмгушка.",
-      "features": [{"value":"40", "caption": "порций"}, {"value":"2", "caption":"мыши в подарок"}]
+      "features": [
+        { "value": "40", "caption": "порций" },
+        { "value": "2", "caption": "мыши в подарок" }
+      ],
+      "quantity": "10"
     },
     {
       "title": "нямушка",
@@ -22,7 +30,12 @@
       "flavour": "с курой",
       "weight": "5",
       "description": "Филе из цыплят с трюфелями в бульоне.",
-      "features": [{"value":"100", "caption": "порций"}, {"value":"5", "caption":"мышей в подарок"}, {"value":"", "caption":"заказчик доволен"}]
+      "features": [
+        { "value": "100", "caption": "порций" },
+        { "value": "5", "caption": "мышей в подарок" },
+        { "value": "", "caption": "заказчик доволен" }
+      ],
+      "quantity": "0"
     }
   ]
 }

@@ -1,24 +1,10 @@
 import React from "react";
 import styles from "./ProductCard.module.css";
-const ProductBottom = ({
-  isDisabled,
-  isSelected,
-  selectProduct,
-  status,
-  flavour,
-  description
-}) => {
+
+const ProductBottom = ({ selectProduct, status, flavour, description }) => {
   switch (status) {
     case "selected":
-      return (
-        <div
-          className={
-            styles.productDescription + " " + styles.productDescription
-          }
-        >
-          {description}
-        </div>
-      );
+      return <div className={styles.productDescription}>{description}</div>;
     case "disabled":
       return (
         <div
@@ -31,11 +17,11 @@ const ProductBottom = ({
       );
     default:
       return (
-        <div className={styles.productDescription + " " + styles.productCta}>
+        <div className={styles.productDescription}>
           Чего сидишь? Порадуй котэ,{" "}
-          <a href="#" className={styles.productCtaLink} onClick={selectProduct}>
+          <button className={styles.productCtaButton} onClick={selectProduct}>
             купи
-          </a>
+          </button>
         </div>
       );
   }
